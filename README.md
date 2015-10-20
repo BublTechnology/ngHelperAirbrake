@@ -18,7 +18,7 @@ angular.module('appApp', [
 Airbrake requires a project id and secret. This can be configured via the application start in the run function as follows:
 
 ```javascript
-.run([ '$airbrake', function($airbrake,) {
+.run([ '$airbrake', function($airbrake) {
 
       // configure airbrake
       $airbrake.setProject('<<PROJECTID>>', '<<PROJECTSECRET>>', '<<EnvironmentOptional>>');
@@ -31,6 +31,9 @@ Airbrake requires a project id and secret. This can be configured via the applic
 The Airbrake plugin is not available as long the setProject method is not called. Only when this method is called exception
 will be catched from the subsystem.
 
+### Filtering errors
+The airbrake module exposes an addFilter method that can be used in the exact same way as [airbrake-js](https://github.com/airbrake/airbrake-js)
+
 ## Contributing
 
 1. Fork it!
@@ -41,8 +44,10 @@ will be catched from the subsystem.
 
 ## Contributors
 
-* [CSS3 activity indicators](https://github.com/lukehaas/css-loaders)
+* [Derek Eisenberg](https://github.com/dei79)
+* [Stephen Bartlett](https://github.com/srbartlett)
+* [Bubl Technology](http://www.bublcam.com/)
 
 ## License
 
-[MIT License](https://github.com/lukehaas/css-loaders/blob/step2/LICENSE)
+[MIT License](https://github.com/ngHelper/ngHelperAirbrake/blob/master/LICENSE.txt)

@@ -9,7 +9,7 @@ ngHelperAirbrake.service('$airbrake', [ function() {
     Airbrake.setProject(project, secret);
 
     if (environment && environment !== undefined) {
-      Airbrake.setEnvironmentName(environment)
+      Airbrake.setEnvironmentName(environment);
     }
 
     _initilized = true;
@@ -38,6 +38,10 @@ ngHelperAirbrake.service('$airbrake', [ function() {
 
   self.isActive = function() {
     return _initilized;
+  };
+
+  self.addFilter = function(filter) {
+    Airbrake.addFilter(filter);
   };
 
   // register our standard logger for the airbrake object
